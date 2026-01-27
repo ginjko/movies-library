@@ -1,0 +1,15 @@
+.catalog {
+  max-width: 90%;
+  margin: 2rem auto;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem 2rem;
+  }
+  @media (min-width: 1000px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  gap: 2rem 1rem;
+}

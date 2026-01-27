@@ -1,0 +1,13 @@
+#root {
+  box-sizing: border-box;
+  margin: 0 auto;
+  /* max-width: 70%; */
+  @media (min-width: 800px) {
+    max-width: 80%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
