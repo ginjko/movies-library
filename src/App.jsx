@@ -1,14 +1,21 @@
-import { useState } from "react";
 import "./App.css";
 import Header from "./Header/Header";
-import Catalog from "./Catalog/Catalog";
+import HomePage from "./pages/HomePage/HomePage";
+import { Routes, Route, BrowserRouter } from "react-router";
+import MoviePage from "./pages/MoviePage/MoviePage";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header></Header>
-      <Catalog></Catalog>
-    </>
+      <Routes>
+        <Route path="/" element={<HomePage></HomePage>}></Route>
+        <Route
+          path="/movie/:movie_id"
+          element={<MoviePage></MoviePage>}
+        ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

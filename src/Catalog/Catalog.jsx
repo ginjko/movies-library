@@ -8,7 +8,7 @@ export default function Catalog() {
   const API_KEY = "VZ42AXD-B8J499Z-HRMEBQA-JR1K1W6";
 
   useEffect(() => {
-    async function searchMovie() {
+    async function searchMovies() {
       try {
         const response = await axios.get(
           "https://api.poiskkino.dev/v1.4/movie?page=1&limit=18&type=tv-series&type=cartoon&type=animated-series&type=anime&status=completed&year=2010-2026",
@@ -25,7 +25,7 @@ export default function Catalog() {
         console.error("Ошибка запроса:", error.response?.data || error.message);
       }
     }
-    searchMovie();
+    searchMovies();
   }, []);
 
   return (
@@ -33,6 +33,7 @@ export default function Catalog() {
       {movies.map((el) => (
         <Card
           key={el.id}
+          id={el.id}
           url={
             el.url
               ? el.url
