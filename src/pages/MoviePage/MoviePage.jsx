@@ -35,11 +35,17 @@ export default function MoviePage() {
   console.log(findedMovie);
 
   return (
-    <>
+    <div className={classes.container}>
       <img className={classes.movie_poster} src={findedMovie.poster} alt="" />
-      <h2>{findedMovie.name}</h2>
-      <h3>Description</h3>
-      <p>{findedMovie.description}</p>
-    </>
+      <h1>{findedMovie.name}</h1>
+      <div className={classes.movie_ratings}>
+        <p>
+          {"Оценки: "}
+          {findedMovie.ratings?.kp ? findedMovie.ratings.kp : "Нет данных"}
+        </p>
+      </div>
+      <h3>Описание</h3>
+      <p className={classes.movie_description}>{findedMovie.description}</p>
+    </div>
   );
 }

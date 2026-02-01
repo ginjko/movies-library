@@ -15,4 +15,8 @@
     width: 100px;
     height: 150px;
   }
+  @media (min-width: 1000px) {
+    width: 170px;
+    height: 210px;
+  }
 }
