@@ -40,8 +40,8 @@ export default function MoviePage() {
       <h1>{findedMovie.name}</h1>
       <div className={classes.movie_ratings}>
         <p>
-          {"Оценки: "}
-          {findedMovie.ratings?.kp ? findedMovie.ratings.kp : "Нет данных"}
+          {"Оценки: " +
+            (findedMovie.ratings?.kp ? findedMovie.ratings.kp : "Нет данных")}
         </p>
       </div>
       <h3>Описание</h3>

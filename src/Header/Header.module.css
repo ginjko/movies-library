@@ -1,8 +1,10 @@
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 1rem;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
   @media (max-width: 600px) {
     margin: 1rem 2rem;
   }
@@ -27,4 +29,27 @@ header {
   border: none;
   cursor: pointer;
   padding: 0;
+}
+
+.nav_menu {
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  width: 150px;
+  background-color: black;
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.nav_btn {
+  font-size: 17px;
+  margin-left: 1rem;
+}
+
+/* .nav_menu {
+} */
+
+.hidden {
+  visibility: hidden;
 }
