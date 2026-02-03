@@ -8,11 +8,16 @@ li {
 }
 
 :root {
+  /* max-width: 700px; */
   background-color: rgb(0, 0, 0);
   color: white;
   display: block;
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  padding: 1rem 1rem;
   font-variation-settings: "wdth" 100;
+  @media (max-width: 600px) {
+    padding: 1rem 1rem;
+  }
 }

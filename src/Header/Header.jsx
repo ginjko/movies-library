@@ -1,12 +1,23 @@
 import classes from "./Header.module.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [visibility, setVisibility] = useState(false);
 
+  useEffect(() => {
+    if (visibility) {
+      setTimeout(() => {
+        setVisibility(false);
+      }, 5000);
+    }
+  }, [visibility]);
+
   return (
     <header>
-      <h3>Your Library</h3>
+      <h3>
+        <Link to={"/"}>Movie Library</Link>
+      </h3>
       <button
         onClick={() => setVisibility(!visibility)}
         className={classes["burger-menu"]}
@@ -24,7 +35,9 @@ export default function Header() {
       >
         <ul className="nav_list">
           <li className={classes["nav_search"]}>
-            <button className={classes["nav_btn"]}>Search</button>
+            <Link to="/search">
+              <button className={classes["nav_btn"]}>Search</button>
+            </Link>
           </li>
           <li className={classes["nav_profile"]}>
             <button className={classes["nav_btn"]}>Profile</button>

@@ -17,7 +17,7 @@ export default function Catalog() {
         const parsed = response.data.docs.map((el) => ({
           id: el.id,
           name: el.name,
-          url: el.poster?.url,
+          poster: el.poster?.url,
         }));
         console.log(parsed);
         setMovies(parsed);
@@ -35,8 +35,8 @@ export default function Catalog() {
           key={el.id}
           id={el.id}
           url={
-            el.url
-              ? el.url
+            el.poster
+              ? el.poster
               : `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVLDP5s2j9u1x86fOb7kNKXanJeMn8zZ30ZQ&s`
           }
           title={el.name ? el.name : "title name"}
