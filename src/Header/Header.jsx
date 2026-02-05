@@ -46,7 +46,9 @@ export default function Header() {
             <button className={classes["nav_btn"]}>Logout</button>
           </li>
           <li className={classes["nav_login"]}>
-            <button className={classes["nav_btn"]}>Login</button>
+            <Link to="/auth">
+              <button className={classes["nav_btn"]}>Login</button>
+            </Link>
           </li>
         </ul>
       </nav>

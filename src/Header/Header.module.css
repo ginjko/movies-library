@@ -37,11 +37,15 @@ header {
   padding: 1rem;
   border: 1px solid white;
   border-radius: 10px;
+  z-index: 10;
 }
 
 .nav_btn {
   font-size: 17px;
   margin-left: 1rem;
+  background-color: inherit;
+  color: white;
+  border: none;
 }
 
 /* .nav_menu {

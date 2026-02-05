@@ -4,12 +4,15 @@ import HomePage from "./pages/HomePage/HomePage";
 import { Routes, Route, BrowserRouter } from "react-router";
 import MoviePage from "./pages/MoviePage/MoviePage";
 import SearchPage from "./pages/SearchPage/SearchPage";
+import supabase from "../utils/supabase.js";
+import AuthPage from "./pages/AuthPage/AuthPage.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <Header></Header>
       <Routes>
+        <Route path="/auth" element={<AuthPage></AuthPage>}></Route>
         <Route path="/" element={<HomePage></HomePage>}></Route>
         <Route
           path="/movie/:movie_id"
