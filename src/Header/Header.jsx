@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 export default function Header() {
   const [visibility, setVisibility] = useState(false);
 
+  const logoutUser = () => {
+    localStorage.removeItem("currentUser");
+  };
+
   useEffect(() => {
     if (visibility) {
       setTimeout(() => {
@@ -34,22 +38,29 @@ export default function Header() {
         }
       >
         <ul className="nav_list">
-          <li className={classes["nav_search"]}>
+          <li className={classes["nav_item"]}>
             <Link to="/search">
               <button className={classes["nav_btn"]}>Search</button>
             </Link>
           </li>
-          <li className={classes["nav_profile"]}>
-            <button className={classes["nav_btn"]}>Profile</button>
-          </li>
-          <li className={classes["nav_logout"]}>
-            <button className={classes["nav_btn"]}>Logout</button>
-          </li>
-          <li className={classes["nav_login"]}>
-            <Link to="/auth">
-              <button className={classes["nav_btn"]}>Login</button>
+          <li className={classes["nav_item"]}>
+            <Link to="/profile">
+              <button className={classes["nav_btn"]}>Profile</button>
             </Link>
           </li>
+          {JSON.parse(localStorage.getItem("currentUser")) ? (
+            <li className={classes["nav_item"]}>
+              <button onClick={logoutUser} className={classes["nav_btn"]}>
+                Logout
+              </button>
+            </li>
+          ) : (
+            <li className={classes["nav_item"]}>
+              <Link to="/auth">
+                <button className={classes["nav_btn"]}>Login</button>
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

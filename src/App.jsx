@@ -6,6 +6,7 @@ import MoviePage from "./pages/MoviePage/MoviePage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import supabase from "../utils/supabase.js";
 import AuthPage from "./pages/AuthPage/AuthPage.jsx";
+import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           path="/movie/:movie_id"
           element={<MoviePage></MoviePage>}
         ></Route>
+        <Route path="/profile" element={<ProfilePage></ProfilePage>}></Route>
         <Route path="/search" element={<SearchPage></SearchPage>}></Route>
       </Routes>
     </BrowserRouter>

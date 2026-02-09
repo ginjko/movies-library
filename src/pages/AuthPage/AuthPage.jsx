@@ -124,7 +124,7 @@ export default function AuthPage() {
           />
 
           <button className={classes["submit_btn"]} type="submit">
-            Create account!
+            Register!
           </button>
         </form>
       </div>
