@@ -1,8 +1,12 @@
 import classes from "./ProfilePage.module.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../store/AuthContext";
 
 export default function ProfilePage() {
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const { currentUser, setCurrentUser } = useContext(AuthContext);
+  // const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log(currentUser);
 
   if (!currentUser) {
     return (
@@ -16,8 +20,9 @@ export default function ProfilePage() {
     return (
       <div className={classes.container}>
         <h3>Your profile</h3>
-        <p>email: {currentUser.user.email}</p>
-        <p>Date of registration {currentUser.user["created_at"]}</p>
+        <p>id {currentUser.id}</p>
+        <p>email: {currentUser.email}</p>
+        <p>Date of registration {currentUser["created_at"]}</p>
       </div>
     );
   }

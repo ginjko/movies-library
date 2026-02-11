@@ -1,12 +1,15 @@
 import classes from "./Header.module.css";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../store/AuthContext";
 
 export default function Header() {
   const [visibility, setVisibility] = useState(false);
+  const { currentUser, setCurrentUser } = useContext(AuthContext);
 
   const logoutUser = () => {
-    localStorage.removeItem("currentUser");
+    // localStorage.removeItem("currentUser");
+    setCurrentUser(null);
   };
 
   useEffect(() => {
@@ -22,6 +25,7 @@ export default function Header() {
       <h3>
         <Link to={"/"}>Movie Library</Link>
       </h3>
+
       <button
         onClick={() => setVisibility(!visibility)}
         className={classes["burger-menu"]}
@@ -48,7 +52,7 @@ export default function Header() {
               <button className={classes["nav_btn"]}>Profile</button>
             </Link>
           </li>
-          {JSON.parse(localStorage.getItem("currentUser")) ? (
+          {currentUser ? (
             <li className={classes["nav_item"]}>
               <button onClick={logoutUser} className={classes["nav_btn"]}>
                 Logout

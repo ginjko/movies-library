@@ -41,6 +41,17 @@ header {
   z-index: 10;
 }
 
+.header-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.theme-btn {
+  height: 1rem;
+  width: 1rem;
+}
+
 .nav_btn {
   font-size: 17px;
   margin-left: 1rem;

@@ -1,7 +1,7 @@
 import classes from "./SearchPage.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Card from "../../Card/Card.jsx";
+import Card from "../../components/Card/Card.jsx";
 
 export default function SearchPage() {
   //   encodeURIComponent("поттер");
